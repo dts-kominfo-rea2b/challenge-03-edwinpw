@@ -22,17 +22,21 @@ const dataBelanjaan = [
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 const listBelanjaan = (databelanja) => {
-  // for(let i = 0 ; i< databelanja.length ; i++){
 
-  // }
+  return databelanja.map((listbelanja) => {
+    return `- ${listbelanja.nama} x ${listbelanja.kuantitas}`;
+  });
+
+
 };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 const totalBelanjaan = (databelanja) => {
-  const total = 0;
-  for(let i = 0 ; i < databelanja.length ; i++){
-    total += (databelanja[i].harga * databelanja[i].kuantitas);
-  }
+  let total = 0;
+
+  databelanja.map((listbelanja) => {
+    total += (listbelanja.harga * listbelanja.kuantitas);
+  });
 
   return total;
 }
